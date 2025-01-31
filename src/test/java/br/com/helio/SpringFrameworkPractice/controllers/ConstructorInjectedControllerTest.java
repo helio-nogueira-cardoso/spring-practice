@@ -1,16 +1,13 @@
 package br.com.helio.SpringFrameworkPractice.controllers;
 
-import br.com.helio.SpringFrameworkPractice.services.GreetingServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest // Let's use Spring Framework now to inject the dependency
 class ConstructorInjectedControllerTest {
+    @Autowired // Let's use Spring Framework now to inject the dependency
      ConstructorInjectedController constructorInjectedController;
-
-    @BeforeEach
-    void setUp() {
-        constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
-    }
 
     @Test
     void sayHello() {
